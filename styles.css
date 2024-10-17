@@ -98,13 +98,13 @@ aside {
 
 .table-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Три колонки одинаковой ширины */
+    grid-template-columns: repeat(3, 1fr);
     width: 100%;
-    border-collapse: collapse; /* Убираем промежутки между границами */
+    border-collapse: collapse;
 }
 
 thead, tbody, tr {
-    display: contents; /* Чтобы элементы воспринимались как отдельные ячейки в Grid */
+    display: contents;
 }
 
 th, td {
