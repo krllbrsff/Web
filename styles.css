@@ -96,11 +96,9 @@ aside {
     font-style: italic;
 }
 
-/* Стили для таблицы */
-table {
+.table-grid {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
 }
 
 th, td {
@@ -109,17 +107,18 @@ th, td {
     text-align: left;
 }
 
+thead th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    text-align: center;
+}
+
 tbody tr:nth-child(odd) {
     background-color: #f9f9f9;
 }
 
 tbody tr:nth-child(even) {
     background-color: #fff;
-}
-
-th {
-    background-color: #878787;
-    font-weight: bold;
 }
 
 footer {
