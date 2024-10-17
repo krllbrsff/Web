@@ -1,5 +1,5 @@
 body {
-    font-family: 'Arial', serif;
+    font-family: 'Roboto', serif;
     background-color: #f4f4f4;
     color: #333;
     margin: 0;
@@ -18,6 +18,7 @@ header img {
 }
 
 nav a {
+    text-decoration: none;
     color: #fff;
     font-weight: bold;
     margin: 0 15px;
@@ -35,14 +36,14 @@ nav a:hover {
 }
 
 .main-banner h1 {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
 }
 
 .main-banner blockquote {
-    font-size: 16px;
+    font-size: 1rem;
     font-style: italic;
     color: #555;
     text-align: center;
@@ -54,11 +55,9 @@ section {
 }
 
 section h2 {
-    font-size: 22px;
+    font-size: 1.375rem;
     margin-bottom: 10px;
 }
-
-
 
 ul li {
     display: inline-block;
@@ -70,11 +69,7 @@ ul img {
     border: 1px solid #333;
 }
 
-pre {
-    background-color: #e8e8e8;
-    padding: 10px;
-    border-radius: 5px;
-}
+
 
 footer {
     background-color: #333;
@@ -102,6 +97,11 @@ h1, h2 {
 p, blockquote, aside {
     margin-bottom: 10px;
     padding-left: 10px;
+}
+
+section p {
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
 .main-banner {
