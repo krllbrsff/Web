@@ -31,7 +31,7 @@ nav a:hover {
     background-color: #ffffff;
     padding: 20px;
     border: 1px solid #ddd;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px;
 }
 
 .main-banner h1 {
@@ -106,12 +106,12 @@ p, blockquote, aside {
 
 .main-banner {
     background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px;
 }
 
 section {
     background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px;
 }
 
 ul li {
