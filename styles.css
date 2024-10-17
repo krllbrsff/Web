@@ -97,8 +97,14 @@ aside {
 }
 
 .table-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Три колонки одинаковой ширины */
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: collapse; /* Убираем промежутки между границами */
+}
+
+thead, tbody, tr {
+    display: contents; /* Чтобы элементы воспринимались как отдельные ячейки в Grid */
 }
 
 th, td {
@@ -113,11 +119,11 @@ thead th {
     text-align: center;
 }
 
-tbody tr:nth-child(odd) {
+tbody tr:nth-child(odd) td {
     background-color: #f9f9f9;
 }
 
-tbody tr:nth-child(even) {
+tbody tr:nth-child(even) td {
     background-color: #fff;
 }
 
