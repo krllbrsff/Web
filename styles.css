@@ -96,31 +96,30 @@ aside {
     font-style: italic;
 }
 
-.table {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    background-color: #fff;
+/* Стили для таблицы */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
     padding: 10px;
     border: 1px solid #ddd;
+    text-align: left;
 }
 
-.table-header {
-    display: contents;
-    font-weight: bold;
-    background-color: #f4f4f4;
-}
-
-.table-row {
-    display: contents;
-}
-
-.table-row:nth-child(odd) {
+tbody tr:nth-child(odd) {
     background-color: #f9f9f9;
 }
 
-.table-row:nth-child(even) {
+tbody tr:nth-child(even) {
     background-color: #fff;
+}
+
+th {
+    background-color: #878787;
+    font-weight: bold;
 }
 
 footer {
