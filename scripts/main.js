@@ -10,7 +10,7 @@
 
 
 (function() {
-    const currentPath = document.location.pathname.split('/').pop();
+    const currentPath = document.location.pathname;
     document.querySelectorAll('nav a').forEach(link => {
         if (link.getAttribute('href') === currentPath) {
             link.classList.add('active');
