@@ -37,6 +37,11 @@ nav a {
     font-size: 1rem;
 }
 
+nav a.active {
+    color: #FFD700;
+    font-weight: bold;
+}
+
 nav a:hover {
     color: #FFD700;
     text-decoration: underline;
