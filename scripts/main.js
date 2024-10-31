@@ -8,14 +8,6 @@
     });
 })();
 
-document.querySelectorAll('nav a').forEach(item => {
-    item.addEventListener('mouseover', () => {
-        item.style.backgroundColor = '#ccc';
-    });
-    item.addEventListener('mouseout', () => {
-        item.style.backgroundColor = '';
-    });
-});
 
 (function() {
     const currentPath = document.location.pathname.split('/').pop();
