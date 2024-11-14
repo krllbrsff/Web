@@ -1,13 +1,12 @@
-(function () {
-    window.addEventListener('load', () => {
-        const loadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart;
-        const footer = document.querySelector('footer');
-        const p = document.createElement('p');
-        p.textContent = `Время загрузки страницы: ${loadTime} мс`;
-        footer.appendChild(p);
-    });
-})();
-
+ (function () {
+        window.addEventListener('load', () => {
+            const loadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart;
+            const footer = document.querySelector('footer');
+            const p = document.createElement('p');
+            p.textContent = `Время загрузки страницы: ${loadTime} мс`;
+            footer.appendChild(p);
+        });
+    })();
 
 (function () {
     const currentUrl = document.location.href;
@@ -20,72 +19,81 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('table-form');
-    const tableContainer = document.getElementById('table-container');
+    const tableBody = document.getElementById('table-body');
+    let entries = JSON.parse(localStorage.getItem('tableEntries')) || [];
 
-    function loadTable() {
-        const savedEntries = JSON.parse(localStorage.getItem('tableEntries')) || [];
-        generateTable(savedEntries);
+    function saveToLocal() {
+        localStorage.setItem('tableEntries', JSON.stringify(entries));
     }
 
-    function generateTable(entries) {
-        tableContainer.innerHTML = '';
+    function generateTable() {
+        tableBody.innerHTML = '';
 
-        const table = document.createElement('table');
-        table.classList.add('table-grid');
-
-        const thead = document.createElement('thead');
-        thead.innerHTML = `<tr><th>Описание</th><th>Дата</th><th>Пробег</th><th>Стоимость</th><th></th></tr>`;
-        table.appendChild(thead);
-
-        const tbody = document.createElement('tbody');
         entries.forEach((entry, index) => {
             const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${entry.description}</td>
-                <td>${entry.date}</td>
-                <td>${entry.mileage}</td>
-                <td>${entry.cost}</td>
-                <td><button class="delete-button" data-index="${index}">Удалить</button></td>
-            `;
-            tbody.appendChild(row);
-        });
 
-        table.appendChild(tbody);
-        tableContainer.appendChild(table);
+            const descriptionCell = document.createElement('td');
+            descriptionCell.textContent = entry.description;
+            row.appendChild(descriptionCell);
 
-        document.querySelectorAll('.delete-button').forEach(button => {
-            button.addEventListener('click', deleteEntry);
+            const dateCell = document.createElement('td');
+            dateCell.textContent = entry.date;
+            row.appendChild(dateCell);
+
+            const mileageCell = document.createElement('td');
+            mileageCell.textContent = entry.mileage;
+            row.appendChild(mileageCell);
+
+            const costCell = document.createElement('td');
+            costCell.textContent = entry.cost;
+            row.appendChild(costCell);
+
+            const actionCell = document.createElement('td');
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Удалить';
+            deleteButton.classList.add('delete-button');
+            deleteButton.setAttribute('data-index', index);
+            deleteButton.addEventListener('click', deleteEntry);
+            actionCell.appendChild(deleteButton);
+            row.appendChild(actionCell);
+
+            tableBody.appendChild(row);
         });
     }
 
     function deleteEntry(event) {
         const index = event.target.getAttribute('data-index');
-        const entries = JSON.parse(localStorage.getItem('tableEntries')) || [];
         entries.splice(index, 1);
-        localStorage.setItem('tableEntries', JSON.stringify(entries));
-        generateTable(entries);
+        saveToLocal();
+        generateTable();
     }
 
     form.addEventListener('submit', event => {
         event.preventDefault();
 
         const formData = new FormData(form);
+        const mileage = formData.get('mileage');
+        const cost = formData.get('cost');
+
+        if (!/^[1-9]\d*$/.test(mileage) || !/^[1-9]\d*$/.test(cost)) {
+            alert('Пробег и стоимость должны быть положительными числами.');
+            return;
+        }
+
         const entry = {
             description: formData.get('description'),
             date: formData.get('date'),
-            mileage: formData.get('mileage'),
-            cost: formData.get('cost')
+            mileage: mileage,
+            cost: cost
         };
 
-        const entries = JSON.parse(localStorage.getItem('tableEntries')) || [];
         entries.push(entry);
-        localStorage.setItem('tableEntries', JSON.stringify(entries));
-
-        generateTable(entries);
+        saveToLocal();
+        generateTable();
         form.reset();
     });
 
-    loadTable();
+    generateTable();
 });
 
 async function fetchImageUrl(brandUrl) {

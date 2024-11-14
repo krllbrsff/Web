@@ -23,13 +23,26 @@
     <section>
         <h2>Таблица ТО</h2>
         <form id="table-form">
-            <label>Описание работ: <input type="text" name="description" required></label><br>
+            <label>Описание работ: <input type="text" name="description"></label><br>
             <label>Дата: <input type="date" name="date" required></label><br>
-            <label>Пробег автомобиля: <input type="number" name="mileage" required></label><br>
-            <label>Стоимость работ: <input type="number" name="cost" required></label><br>
+            <label>Пробег автомобиля: <input type="text" name="mileage" required pattern="^[1-9]\d*$" title="Введите положительное число"></label><br>
+            <label>Стоимость работ: <input type="text" name="cost" required pattern="^[1-9]\d*$" title="Введите положительное число"></label><br>
             <button type="submit">Создать запись</button>
         </form>
-        <div id="table-container"></div>
+        <div id="table-container">
+            <table class="table-grid">
+                <thead>
+                <tr>
+                    <th>Описание</th>
+                    <th>Дата</th>
+                    <th>Пробег</th>
+                    <th>Стоимость</th>
+                    <th>Действие</th>
+                </tr>
+                </thead>
+                <tbody id="table-body"></tbody>
+            </table>
+        </div>
     </section>
 </main>
 <footer>
