@@ -1,12 +1,12 @@
- (function () {
-        window.addEventListener('load', () => {
-            const loadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart;
-            const footer = document.querySelector('footer');
-            const p = document.createElement('p');
-            p.textContent = `Время загрузки страницы: ${loadTime} мс`;
-            footer.appendChild(p);
-        });
-    })();
+(function () {
+    window.addEventListener('load', () => {
+        const loadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart;
+        const footer = document.querySelector('footer');
+        const p = document.createElement('p');
+        p.textContent = `Время загрузки страницы: ${loadTime} мс`;
+        footer.appendChild(p);
+    });
+})();
 
 (function () {
     const currentUrl = document.location.href;
@@ -20,6 +20,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('table-form');
     const tableBody = document.getElementById('table-body');
+    const rowTemplate = document.getElementById('row-template');
     let entries = JSON.parse(localStorage.getItem('tableEntries')) || [];
 
     function saveToLocal() {
@@ -30,32 +31,15 @@ document.addEventListener('DOMContentLoaded', () => {
         tableBody.innerHTML = '';
 
         entries.forEach((entry, index) => {
-            const row = document.createElement('tr');
+            const row = rowTemplate.content.cloneNode(true);
+            row.querySelector('.description').textContent = entry.description;
+            row.querySelector('.date').textContent = entry.date;
+            row.querySelector('.mileage').textContent = entry.mileage;
+            row.querySelector('.cost').textContent = entry.cost;
 
-            const descriptionCell = document.createElement('td');
-            descriptionCell.textContent = entry.description;
-            row.appendChild(descriptionCell);
-
-            const dateCell = document.createElement('td');
-            dateCell.textContent = entry.date;
-            row.appendChild(dateCell);
-
-            const mileageCell = document.createElement('td');
-            mileageCell.textContent = entry.mileage;
-            row.appendChild(mileageCell);
-
-            const costCell = document.createElement('td');
-            costCell.textContent = entry.cost;
-            row.appendChild(costCell);
-
-            const actionCell = document.createElement('td');
-            const deleteButton = document.createElement('button');
-            deleteButton.textContent = 'Удалить';
-            deleteButton.classList.add('delete-button');
+            const deleteButton = row.querySelector('.delete-button');
             deleteButton.setAttribute('data-index', index);
             deleteButton.addEventListener('click', deleteEntry);
-            actionCell.appendChild(deleteButton);
-            row.appendChild(actionCell);
 
             tableBody.appendChild(row);
         });
