@@ -24,6 +24,8 @@ header {
 header nav {
     display: flex;
     gap: 25px;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header img {
@@ -180,10 +182,13 @@ footer {
     width: 100%;
 }
 
-/* Мобильные  */
+
+
 @media screen and (max-width: 600px) {
-    nav a {
-        font-size: 0.9rem;
+    header nav {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
     }
 
     header img,

@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Мой Авто</title>
+    <title>Таблица ТО</title>
     <link rel="stylesheet" href="styles.css">
     <script src="scripts/main.js" defer></script>
 </head>
@@ -21,11 +21,15 @@
 </header>
 <main>
     <section>
-        <h2>Информация о вашем автомобиле</h2>
-        <p>Марка: <strong>Toyota</strong></p>
-        <p>Модель: <strong>Corolla</strong></p>
-        <p>Год выпуска: <strong>2019</strong></p>
-        <p>Цвет: <strong>Черный</strong></p>
+        <h2>Таблица ТО</h2>
+        <form id="table-form">
+            <label>Описание работ: <input type="text" name="description" required></label><br>
+            <label>Дата: <input type="date" name="date" required></label><br>
+            <label>Пробег автомобиля: <input type="number" name="mileage" required></label><br>
+            <label>Стоимость работ: <input type="number" name="cost" required></label><br>
+            <button type="submit">Создать запись</button>
+        </form>
+        <div id="table-container"></div>
     </section>
 </main>
 <footer>
