@@ -4,14 +4,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     const errorMessage = document.getElementById('error-message');
 
     try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/userses');
+        const response = await fetch('https://jsonplaceholder.typicode.com/users');
 
         if (!response.ok) {
             throw new Error('Ошибка сети');
         }
 
         const users = await response.json();
-        const user = users[Math.floor(Math.random() * users.length)]; // Случайный пользователь
+        const user = users[Math.floor(Math.random() * users.length)];
 
         document.getElementById('username').textContent = user.username;
         document.getElementById('name').textContent = user.name;
