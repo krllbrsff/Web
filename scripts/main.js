@@ -80,6 +80,10 @@ document.addEventListener('DOMContentLoaded', () => {
     generateTable();
 });
 
+document.getElementById('profile-icon').addEventListener('click', () => {
+    window.location.href = 'profile.html';
+});
+
 async function fetchImageUrl(brandUrl) {
     try {
         const response = await fetch(`http://localhost:3000/fetch-image?url=${encodeURIComponent(brandUrl)}`);
