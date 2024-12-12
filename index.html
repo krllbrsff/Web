@@ -7,61 +7,79 @@
     <title>All The Cars</title>
     <meta name="description" content="Описание вашей страницы, например, 'Виртуальный гараж и каталог автомобилей'">
     <meta name="keywords" content="автомобили, гараж, каталог, машины, виртуальный гараж">
+    <script src="scripts/main.js" defer></script>
 </head>
 <body>
 <header>
-    <table width="100%">
-        <tr>
-            <td>
-                <img src="Group%203.png" width="100" alt="Site logo">
-            </td>
-            <td align="center">
-                <nav>
-                    <a href="#">Каталог</a>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="#">Мой Авто</a>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="#">PRO</a>
-                </nav>
-            </td>
-            <td align="right">
-                <img src="Group%201.png" width="80" alt="Avatar">
-            </td>
-        </tr>
-    </table>
-</header>
+    <a href="index.html">
+        <img src="Group%203.png" width="100" alt="Site logo">
+    </a>
+    <nav>
+        <a href="catalog.html">Каталог</a>
+        <a href="mycar.html">Мой Авто</a>
+        <a href="pro.html">PRO</a>
+        <a href="constructor.html">Таблица ТО</a>
+    </nav>
+    <a href="profile.html">
+        <img id="profile-icon" src="Group%201.png" width="80" alt="Avatar">
+    </a></header>
 <main>
-    <div align="center">
-        <article class="main-banner">
-            <h1>Ваш виртуальный гараж</h1>
-            <blockquote>
-                <q>Автомобиль может быть <em>любого</em> цвета, если этот цвет <strong>черный</strong>. </q>
-            </blockquote>
-        </article>
-    </div>
+    <article class="main-banner">
+        <h1>Ваш виртуальный гараж</h1>
+        <blockquote>
+            <q>Автомобиль может быть <em>любого</em> цвета, если этот цвет <strong>черный</strong>.</q>
+        </blockquote>
+    </article>
+
     <section>
-        <h2>Каталог</h2>
+        <h2><a href="catalog.html">Каталог</a></h2>
         <ul>
-            <li>
-                <img src="https://cf-cdn-v6.volkswagen.at/media/Theme_MetaTags_OpenGraphImage_Component/40760-metaTags-ogImage/dh-1200-23ade3/2e1de91b/1714453782/VW_nbdLogo_reg_darkblue_digital_sRGB_1000px.png"
-                     width="50" alt="Volkswagen Logo">
-            </li>
-            <li>
-                <img src="https://www.batoturon.beget.app/uploads/1721655426225-toyota2.png" width="50"
-                     alt="Toyota Logo">
-            </li>
+            <li><a href="volkswagen.html"><img src="https://cf-cdn-v6.volkswagen.at/media/Theme_MetaTags_OpenGraphImage_Component/40760-metaTags-ogImage/dh-1200-23ade3/2e1de91b/1714453782/VW_nbdLogo_reg_darkblue_digital_sRGB_1000px.png" width="50" alt="Volkswagen Logo"></a></li>
+            <li><a href="toyota.html"><img src="https://www.batoturon.beget.app/uploads/1721655426225-toyota2.png" width="50" alt="Toyota Logo"></a></li>
         </ul>
     </section>
 
     <aside>Куплю гараж 10 м<sup>2</sup> в СПБ</aside>
+
     <section>
-        <h2>Мой Авто</h2>
+        <h2><a href="mycar.html">Мой Авто</a></h2>
         <p>Ваш автомобиль: <strong>Toyota Corolla</strong></p>
         <p>Год выпуска: <strong>2019</strong></p>
         <p>Цвет: <strong>черный</strong></p>
+    </section>
+
+    <section>
+        <h2>Список автомобилей</h2>
+        <table class="table-grid">
+            <thead>
+            <tr>
+                <th>Марка</th>
+                <th>Модель</th>
+                <th>Год</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Volkswagen</td>
+                <td>Passat</td>
+                <td>2020</td>
+            </tr>
+            <tr>
+                <td>Toyota</td>
+                <td>Corolla</td>
+                <td>2019</td>
+            </tr>
+            <tr>
+                <td>Ford</td>
+                <td>Focus</td>
+                <td>2018</td>
+            </tr>
+            </tbody>
+        </table>
     </section>
 </main>
 <footer>
     <p>&copy; All The Cars</p>
 </footer>
-
 </body>
 </html>

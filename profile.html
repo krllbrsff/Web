@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Профиль пользователя</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts/profile.js" defer></script>
+</head>
+<body>
+<header>
+    <a href="index.html">
+        <img src="Group%203.png" width="100" alt="Site logo">
+    </a>
+    <nav>
+        <a href="catalog.html">Каталог</a>
+        <a href="mycar.html">Мой Авто</a>
+        <a href="pro.html">PRO</a>
+        <a href="constructor.html">Таблица ТО</a>
+    </nav>
+    <a href="profile.html">
+        <img id="profile-icon" src="Group%201.png" width="80" alt="Avatar">
+    </a></header>
+<main>
+    <section id="user-profile">
+        <div id="preloader" class="preloader">Загрузка...</div>
+        <div id="profile-data" style="display: none;">
+            <h2>Профиль пользователя</h2>
+            <p><strong>Имя пользователя:</strong> <span id="username"></span></p>
+            <p><strong>ФИО:</strong> <span id="name"></span></p>
+            <p><strong>Email:</strong> <span id="email"></span></p>
+            <p><strong>Адрес:</strong> <span id="address"></span></p>
+            <p><strong>Телефон:</strong> <span id="phone"></span></p>
+            <p><strong>Веб-сайт:</strong> <span id="website"></span></p>
+            <p><strong>Компания:</strong> <span id="company"></span></p>
+        </div>
+        <p id="error-message" style="display: none; color: red;">⚠ Что-то пошло не так.</p>
+    </section>
+</main>
+<footer>
+    <p>&copy; All The Cars</p>
+</footer>
+</body>
+</html>
