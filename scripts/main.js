@@ -112,8 +112,8 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     const swiper = new Swiper('.swiper-container', {
         loop: true, // Бесконечный слайд
-        slidesPerView: 3, // Количество видимых слайдов
-        spaceBetween: 20, // Расстояние между слайдами
+        slidesPerView: 5, // Количество видимых слайдов
+        spaceBetween: 10, // Расстояние между слайдами
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
