@@ -205,7 +205,7 @@ footer {
 
 .swiper-container {
     width: 100%;
-    padding: 40px 10px 20px 10px;
+    padding: 40px 0px 20px 50px;
     position: relative;
     overflow: hidden;
 }
@@ -223,8 +223,7 @@ footer {
 }
 
 .swiper-button-next {
-    right: 30px;
-    padding-right: 100px;
+    right: 10px;
 }
 
 .swiper-pagination {
