@@ -108,3 +108,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const swiper = new Swiper('.swiper-container', {
+        loop: true, // Бесконечный слайд
+        slidesPerView: 3, // Количество видимых слайдов
+        spaceBetween: 20, // Расстояние между слайдами
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        autoplay: {
+            delay: 3000, // Автоматическое пролистывание каждые 3 секунды
+            disableOnInteraction: false, // Продолжает после взаимодействия
+        },
+    });
+});

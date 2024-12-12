@@ -12,8 +12,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             throw new Error('Ошибка сети');
         }
 
-        const users = await response.json();
-
         document.getElementById('username').textContent = user.username;
         document.getElementById('name').textContent = user.name;
         document.getElementById('email').textContent = user.email;

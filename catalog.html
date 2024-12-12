@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <title>Каталог автомобилей</title>
     <link rel="stylesheet" href="styles.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
     <script src="scripts/main.js" defer></script>
 </head>
 <body>
@@ -12,45 +16,44 @@
         <img src="Group%203.png" width="100" alt="Site logo">
     </a>
     <nav>
-        <a href="catalog.html">Каталог</a>
+        <a href="catalog.html" class="active">Каталог</a>
         <a href="mycar.html">Мой Авто</a>
         <a href="pro.html">PRO</a>
         <a href="constructor.html">Таблица ТО</a>
     </nav>
     <a href="profile.html">
         <img id="profile-icon" src="Group%201.png" width="80" alt="Avatar">
-    </a></header>
+    </a>
+</header>
 <main>
     <section>
         <h2>Выберите марку автомобиля</h2>
-        <ul>
-            <li><a href="#" data-url="https://1000logos.net/volkswagen-logo/"><img src="" width="50"
-                                                                                   alt="Volkswagen Logo"></a></li>
-            <li><a href="#" data-url="https://1000logos.net/toyota-logo/"><img src="" width="50" alt="Toyota Logo"></a>
-            </li>
-            <li><a href="#" data-url="https://1000logos.net/ford-logo/"><img src="" width="50" alt="Ford Logo"></a></li>
-            <li><a href="#" data-url="https://1000logos.net/bmw-logo/"><img src="" width="50" alt="BMW Logo"></a></li>
-            <li><a href="#" data-url="https://1000logos.net/mercedes-logo/"><img src="" width="50"
-                                                                                 alt="Mercedes-Benz Logo"></a></li>
-            <li><a href="#" data-url="https://1000logos.net/audi-logo/"><img src="" width="50" alt="Audi Logo"></a></li>
-            <li><a href="#" data-url="https://1000logos.net/honda-logo/"><img src="" width="50" alt="Honda Logo"></a>
-            </li>
-            <li><a href="#" data-url="https://1000logos.net/nissan-logo/"><img src="" width="50" alt="Nissan Logo"></a>
-            </li>
-            <li><a href="#" data-url="https://1000logos.net/hyundai-logo/"><img src="" width="50"
-                                                                                alt="Hyundai Logo"></a></li>
-            <li><a href="#" data-url="https://1000logos.net/chevrolet-logo/"><img src="" width="50"
-                                                                                  alt="Chevrolet Logo"></a></li>
-            <li><a href="#" data-url="https://1000logos.net/lexus-logo/"><img src="" width="50" alt="Lexus Logo"></a>
-            </li>
-            <li><a href="#" data-url="https://1000logos.net/mazda-logo/"><img src="" width="50" alt="Mazda Logo"></a>
-            </li>
-            <li><a href="#" data-url="https://1000logos.net/tesla-logo/"><img src="" width="50" alt="Tesla Logo"></a>
-            </li>
-            <li><a href="#" data-url="https://1000logos.net/kia-logo/"><img src="" width="50" alt="Kia Logo"></a></li>
-            <li><a href="#" data-url="https://1000logos.net/volvo-logo/"><img src="" width="50" alt="Volvo Logo"></a>
-            </li>
-        </ul>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img
+                        src="https://1000logos.net/wp-content/uploads/2017/06/Volkswagen-logo.png" alt="Volkswagen Logo"
+                        width="100"></div>
+                <div class="swiper-slide"><img src="https://1000logos.net/wp-content/uploads/2017/06/Toyota-logo.png"
+                                               alt="Toyota Logo" width="100"></div>
+                <div class="swiper-slide"><img src="https://1000logos.net/wp-content/uploads/2017/06/Ford-logo.png"
+                                               alt="Ford Logo" width="100"></div>
+                <div class="swiper-slide"><img src="https://1000logos.net/wp-content/uploads/2017/06/BMW-logo.png"
+                                               alt="BMW Logo" width="100"></div>
+                <div class="swiper-slide"><img src="https://1000logos.net/wp-content/uploads/2017/06/Mercedes-logo.png"
+                                               alt="Mercedes-Benz Logo" width="100"></div>
+                <div class="swiper-slide"><img src="https://1000logos.net/wp-content/uploads/2017/06/Audi-logo.png"
+                                               alt="Audi Logo" width="100"></div>
+                <div class="swiper-slide"><img src="https://1000logos.net/wp-content/uploads/2017/06/Honda-logo.png"
+                                               alt="Honda Logo" width="100"></div>
+                <div class="swiper-slide"><img src="https://1000logos.net/wp-content/uploads/2017/06/Nissan-logo.png"
+                                               alt="Nissan Logo" width="100"></div>
+                <div class="swiper-slide"><img src="https://1000logos.net/wp-content/uploads/2017/06/Hyundai-logo.png"
+                                               alt="Hyundai Logo" width="100"></div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
     </section>
 </main>
 <footer>

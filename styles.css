@@ -203,6 +203,36 @@ footer {
     width: 100%;
 }
 
+.swiper-container {
+    width: 100%;
+    padding: 20px 0;
+    position: relative;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.swiper-button-prev {
+    left: 10px;
+}
+
+.swiper-button-next {
+    right: 10px;
+}
+
+.swiper-pagination {
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    width: 100%;
+    z-index: 10;
+}
+
 
 @media screen and (max-width: 600px) {
     header nav {
