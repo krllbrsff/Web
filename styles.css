@@ -15,7 +15,7 @@ header {
     color: #fff;
     padding: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: fixed;
+    position: relative;
     top: 0;
     width: 100%;
     z-index: 1000;
@@ -60,7 +60,7 @@ main {
 .main-banner {
     background-color: #ffffff;
     padding: 30px;
-    margin: 100px 80px 20px;
+    margin: 100px 80px;
     text-align: center;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -205,7 +205,7 @@ footer {
 
 .swiper-container {
     width: 100%;
-    padding: 40px 50px 20px 50px;
+    padding: 40px 10px 20px 10px;
     position: relative;
     overflow: hidden;
 }
@@ -223,7 +223,7 @@ footer {
 }
 
 .swiper-button-next {
-    right: 10px;
+    right: 30px;
 }
 
 .swiper-pagination {
