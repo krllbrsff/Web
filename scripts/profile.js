@@ -2,15 +2,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     const preloader = document.getElementById('preloader');
     const profileData = document.getElementById('profile-data');
     const errorMessage = document.getElementById('error-message');
-    const user = Math.floor(Math.random() * 10)+1;
+    const userNum = Math.floor(Math.random() * 10)+1;
 
 
     try {
-        const response = await fetch(`https://jsonplaceholder.typicode.com/users/${user}`);
+        const response = await fetch(`https://jsonplaceholder.typicode.com/users/${userNum}`);
 
         if (!response.ok) {
             throw new Error('Ошибка сети');
         }
+        const user = await response.json();
 
         document.getElementById('username').textContent = user.username;
         document.getElementById('name').textContent = user.name;
